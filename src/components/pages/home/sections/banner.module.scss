@@ -1,0 +1,51 @@
+.banner_section {
+  min-height: 100vh;
+  background-color: $color_sky_blue;
+  padding-top: 150px;
+
+  .container {
+    // border: 1px solid red;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    align-items: center;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      h1 {
+        font-size: 80px;
+      }
+    }
+
+    .right {
+      img {
+        width: 100%;
+        height: auto;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 40px;
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    padding-top: 100px;
+
+    .container {
+      flex-direction: column;
+      text-align: center;
+      grid-template-columns: 100%;
+      padding-bottom: 50px;
+
+      .left {
+        align-items: center;
+        margin-bottom: 30px;
+
+        h1 {
+            font-size: 60px;
+          }
+      }
+    }
+  }
+}

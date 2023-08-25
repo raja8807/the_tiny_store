@@ -1,0 +1,80 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: transparent;
+  
+  &.scrolled {
+      border-bottom: 2px solid $color_pink;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    
+    @include respond-below(md){
+        grid-template-columns: repeat(2,50%);
+
+    }
+  }
+
+  nav {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    a {
+      text-decoration: none;
+      color: $color_light_black;
+      font-size: 18px;
+      &:hover {
+        color: $color_pink;
+      }
+
+      &.active {
+        color: $color_pink;
+        border-bottom: 2px solid $color_pink;
+      }
+    }
+
+    @include respond-below(md) {
+      display: none;
+    }
+  }
+
+  .controls {
+    align-items: center;
+    
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    font-size: 24px;
+
+    svg {
+      cursor: pointer;
+      color: $color_light_black;
+
+      &:hover {
+        color: $color_pink;
+      }
+    }
+
+    .toogle_menu {
+      font-size: 30px;
+      svg {
+        color: $color_pink;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+      }
+
+      @include respond-above(md) {
+        display: none;
+      }
+    }
+  }
+}

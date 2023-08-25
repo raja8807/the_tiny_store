@@ -1,0 +1,14 @@
+.custom_button {
+  width: fit-content;
+  padding: 5px 20px;
+  border: none;
+  outline: none;
+
+  background-color: $color_violet;
+  border-radius: 8px;
+  color: white;
+
+  &:hover {
+    background-color: $color_pink;
+  }
+}
