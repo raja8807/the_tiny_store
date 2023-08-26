@@ -1,0 +1,22 @@
+.what_is_tts {
+  //   height: 100vh;
+  //   background-color: $color_;
+  padding: 60px 0;
+
+  .head {
+    text-align: center;
+
+    p {
+      color: $color_dark_grey;
+      font-size: 17px;
+    }
+  }
+
+  @include respond-below(md) {
+    .head {
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+}

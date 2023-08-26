@@ -1,0 +1,16 @@
+.section_heading{
+    text-align: center;
+    // border: 1px solid red;
+    padding: 0px 0 20px 0;
+    font-size: 30px;
+
+    hr{
+        width: 75px;
+        margin: auto;
+        height: 2px;
+        border-radius: 2px;
+        background-color: $color_violet;
+        opacity: 1;
+        border: none;
+    }
+}

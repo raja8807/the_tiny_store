@@ -46,10 +46,11 @@ const DecorateText = () => {
   const [currentFont, setCurrentFont] = useState(decorate_font_1);
 
   const getNewColor = (dark) => {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * dark ? 128 : 256);
-    const b = Math.floor(Math.random() * dark ? 100 : 256);
+    const r = Math.ceil(Math.random() * 255);
+    const g = Math.ceil(Math.random() * dark ? 128 : 255);
+    const b = Math.ceil(Math.random() * dark ? 100 : 255);
 
+    // console.log(r);
     return `rgb(${r},${g},${b})`;
   };
 

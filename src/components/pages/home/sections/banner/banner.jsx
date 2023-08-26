@@ -5,10 +5,8 @@ import { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
 import { Shop } from "react-bootstrap-icons";
 
-import {
-  Bebas_Neue as HeadFont,} from "next/font/google";
+import { Bebas_Neue as HeadFont } from "next/font/google";
 import DecorateText from "./decorate_text/decorate_text";
-
 
 const head_font = HeadFont({
   subsets: ["latin"],
@@ -16,7 +14,6 @@ const head_font = HeadFont({
 });
 
 const BannerSection = () => {
-
   return (
     <div className={styles.banner_section}>
       <div className={styles.blob}>
@@ -37,13 +34,12 @@ const BannerSection = () => {
             {/* <br/> */}
             <DecorateText />
             {/* <br/> */}
-         
             Your Own Tiny Store <Shop className={styles.icon} />
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex eum
-            excepturi ipsam rem aliquid aut nostrum sint accusamus corrupti sint
-            accusamus corrupti quam!
+            Are you a Small Business Owner with Big Dreams? Do you want to take
+            your products to the Online Market and reach wider Audience? Look No
+            Further!
           </p>
 
           <div className={styles.call_action}>

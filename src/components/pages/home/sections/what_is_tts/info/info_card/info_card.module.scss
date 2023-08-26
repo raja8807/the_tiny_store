@@ -1,0 +1,27 @@
+.info_card {
+  padding:20px 40px;
+
+  .icon {
+    @include flexCenter;
+    margin: 20px;
+    svg {
+      font-size: 80px;
+      color: $color_pink;
+      opacity: 0.9;
+    }
+  }
+
+  .details {
+    text-align: center;
+
+    h5 {
+      color: $color_violet;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    p {
+      color: $color_dark_grey;
+    }
+  }
+}
