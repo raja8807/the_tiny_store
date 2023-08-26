@@ -13,6 +13,36 @@ import HeaderDrawer from "./header-drawer/header-drawer";
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
+  const navItems = [
+    {
+      id: "home",
+      href: "/",
+      text: "Home",
+    },
+    {
+      id: "templates",
+      href: "/",
+      text: "Templates",
+    },
+    {
+      id: "explore",
+      href: "/",
+      text: "Explore",
+    },
+    {
+      id: "pricing",
+      href: "/",
+      text: "Pricing",
+    },
+    {
+      id: "about",
+      href: "/",
+      text: "About Us",
+    },
+  ];
+
+  const [currentPage, setCurrentPage] = useState(navItems[0].id);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window) {
@@ -38,13 +68,20 @@ const Header = () => {
         {/* </div> */}
 
         <nav>
-          <Link href="#" className={styles.active}>
-            Home
-          </Link>
-          <Link href="#">Templates</Link>
-          <Link href="#">Explore</Link>
-          <Link href="#">Pricing</Link>
-          <Link href="#">About Us</Link>
+          {navItems.map((item) => (
+            <Link
+              key={item.id}
+              href={item.href}
+              className={`${styles.nav_item} ${
+                currentPage === item.id && styles.active
+              }`}
+              onClick={() => {
+                setCurrentPage(item.id);
+              }}
+            >
+              {item.text}
+            </Link>
+          ))}
         </nav>
 
         <div className={styles.controls}>
@@ -56,7 +93,13 @@ const Header = () => {
                 setShowDrawer(true);
               }}
             />
-            <HeaderDrawer show={showDrawer} setShow={setShowDrawer} />
+            <HeaderDrawer
+              show={showDrawer}
+              setShow={setShowDrawer}
+              navItems={navItems}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           </div>
         </div>
       </CustomContainer>

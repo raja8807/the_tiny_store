@@ -1,9 +1,10 @@
 import Link from "next/link";
 import styles from "./header-drawer.module.scss";
+import CustomButton from "@/ui/custom-button/custom_button";
 const { Offcanvas, Image } = require("react-bootstrap");
 
 const HeaderDrawer = (props) => {
-  const { show, setShow } = props;
+  const { show, setShow, navItems, setCurrentPage, currentPage } = props;
 
   const handleClose = () => setShow(false);
 
@@ -13,6 +14,8 @@ const HeaderDrawer = (props) => {
       onHide={handleClose}
       {...props}
       className={styles.header_drawer}
+      placement="end"
+      
     >
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>
@@ -24,16 +27,26 @@ const HeaderDrawer = (props) => {
           />
         </Offcanvas.Title>
       </Offcanvas.Header>
-      <Offcanvas.Body>
+      <Offcanvas.Body className={styles.drawer_body}>
         <nav>
-          <Link href="#" className={styles.active}>
-            Home
-          </Link>
-          <Link href="#">Templates</Link>
-          <Link href="#">Explore</Link>
-          <Link href="#">Pricing</Link>
-          <Link href="#">About Us</Link>
+          {navItems.map((item) => (
+            <Link
+              key={item.id}
+              href={item.href}
+              className={`${styles.nav_item} ${
+                currentPage === item.id && styles.active
+              }`}
+              onClick={() => {
+                setCurrentPage(item.id);
+              }}
+            >
+              {item.text}
+            </Link>
+          ))}
         </nav>
+        <div className={styles.btns}>
+          <CustomButton varient="white">Login</CustomButton>
+        </div>
       </Offcanvas.Body>
     </Offcanvas>
   );

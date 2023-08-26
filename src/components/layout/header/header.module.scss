@@ -32,11 +32,14 @@
       font-size: 18px;
       &:hover {
         color: $color_pink;
-      }
-
-      &.active {
+    }
+    
+    &.active {
         color: $color_pink;
-        border-bottom: 2px solid $color_pink;
+        text-shadow: 0px 0px 1px $color_pink;
+        // color: white;
+        // text-shadow: 0px 0px 10px $color_pink;
+        border-bottom: 3px solid $color_pink;
       }
     }
 

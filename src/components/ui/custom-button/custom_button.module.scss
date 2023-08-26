@@ -1,14 +1,32 @@
 .custom_button {
   width: fit-content;
-  padding: 5px 20px;
+  padding: 6px 20px;
   border: none;
   outline: none;
+  border-radius: 10px;
 
-  background-color: $color_violet;
-  border-radius: 8px;
-  color: white;
+  &.varient_1 {
+    background-color: $color_violet;
+    color: white;
+    box-shadow: 0.3px 0.3px 0px 0.3px $color_pink;
 
-  &:hover {
-    background-color: $color_pink;
+    &:hover {
+      background-color: $color_pink;
+      box-shadow: 2px 2px 2px 2px $color_violet;
+      transform: translate(-1px, -1px);
+    }
+  }
+
+  &.varient_white {
+    background-color: white;
+    border: 2px solid $color_violet;
+    // box-shadow: 0.3px 0.3px 0px 0.3px $color_pink;
+
+    &:hover {
+      background-color: $color_pink;
+      color: white;
+      //   box-shadow: 1px 1px 1px 1px $color_violet;
+      //   transform: translate(-1px, -1px);
+    }
   }
 }

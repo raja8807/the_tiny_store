@@ -1,4 +1,13 @@
 .header_drawer {
+  * {
+    font-weight: 600;
+  }
+  .drawer_body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-bottom: 40px;
+  }
   nav {
     display: flex;
     flex-direction: column;
@@ -16,6 +25,12 @@
         color: $color_pink;
         border-bottom: 2px solid $color_pink;
       }
+    }
+  }
+
+  .btns {
+    button {
+      width: 100%;
     }
   }
 }

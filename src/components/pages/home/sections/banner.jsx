@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
 
 const BannerSection = () => {
-  const [color, setColor] = useState("black");
+  const [style, setStyle] = useState({});
 
-  const getNewColor = () => {
+  const getNewColor = (dark) => {
     const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 128);
-    const b = Math.floor(Math.random() * 100);
+    const g = Math.floor(Math.random() * dark ? 128 : 256);
+    const b = Math.floor(Math.random() * dark ? 100 : 256);
 
     return `rgb(${r},${g},${b})`;
   };
@@ -18,9 +18,20 @@ const BannerSection = () => {
   // let interval
 
   useEffect(() => {
+    const types = ["dotted", "dashed"];
+    let currentType = 0;
     const interval = setInterval(() => {
-        console.log(color);
-      setColor(getNewColor());
+      setStyle({
+        color: getNewColor(true),
+        // border: `4px ${types[currentType]} ${getNewColor()}`,
+        padding: "0 10px",
+        textShadow: `1px 1px 2px ${getNewColor(true)}`,
+      });
+      if (currentType === 0) {
+        currentType = 1;
+      } else {
+        currentType = 0;
+      }
     }, 400);
 
     return () => clearInterval(interval);
@@ -33,19 +44,19 @@ const BannerSection = () => {
       <CustomContainer className={styles.container}>
         <div className={styles.left}>
           <h1>
-            Open Your Own <span style={{ color }}>Personalised</span> Tiny Store
-            Online.
+            Open And<span style={{ ...style }}>Decorated</span>Your Own Tiny
+            Online Store.
           </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex eum
-            excepturi ipsam rem aliquid aut nostrum sint accusamus corrupti
-            sint accusamus corrupti
-            quam!
+            excepturi ipsam rem aliquid aut nostrum sint accusamus corrupti sint
+            accusamus corrupti quam!
           </p>
+
           <CustomButton>Open Your Store Now</CustomButton>
         </div>
         <div className={styles.right}>
-        <Image src="images/banner/1.jpg" alt="banner" fluid/>
+          <Image src="images/banner/1.jpg" alt="banner" fluid />
         </div>
       </CustomContainer>
     </div>
