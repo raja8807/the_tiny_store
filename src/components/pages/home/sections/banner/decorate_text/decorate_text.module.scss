@@ -1,0 +1,17 @@
+.decorate_text_container {
+  @include flexCenter;
+  justify-content: flex-start;
+//   border: 1px solid red;
+  .decorate_text {
+    display: block;
+    font-size: 85px;
+
+    //   height: fit-content;
+  }
+  @include respond-below(md) {
+    .decorate_text {
+      font-size: 60px;
+    }
+    justify-content: center;
+  }
+}

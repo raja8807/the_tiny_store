@@ -1,4 +1,4 @@
-const { default: BannerSection } = require("./sections/banner");
+const { default: BannerSection } = require("./sections/banner/banner");
 
 const SECTIONS_DATA = [
   {

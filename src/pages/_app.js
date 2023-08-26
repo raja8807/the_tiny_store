@@ -4,16 +4,23 @@ import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-import { Bebas_Neue } from "next/font/google";
 import Header from "../components/layout/header/header";
 // import Head from "next/head";
 // import { SessionProvider } from "next-auth/react";
 // import { SSRProvider } from "react-bootstrap";
 
-const josefin_Sans = Bebas_Neue({
+// import { Bebas_Neue } from "next/font/google";
+// const josefin_Sans = Bebas_Neue({
+  //   subsets: ["latin"],
+  //   weight: ["400"],
+  // });
+  
+  import { Roboto_Condensed as TTS_Font } from "next/font/google";
+const josefin_Sans = TTS_Font({
   subsets: ["latin"],
   weight: ["400"],
 });
+
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -42,6 +49,7 @@ export default function App({ Component, pageProps }) {
       {/* <SSRProvider> */}
       {/* <NodHeader /> */}
       <main className={josefin_Sans.className}>
+      {/* <main > */}
         <Header />
         <Component {...pageProps} />
       </main>
