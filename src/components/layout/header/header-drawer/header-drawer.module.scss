@@ -1,14 +1,14 @@
 .header_drawer {
-  * {
-    font-weight: 600;
-  }
-  .drawer_body {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    padding-bottom: 40px;
-  }
-  nav {
+    * {
+        font-weight: 600;
+    }
+    .drawer_body {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding-bottom: 40px;
+    }
+    nav {
     display: flex;
     flex-direction: column;
     gap: 20px;

@@ -7,7 +7,6 @@ import styles from "./header.module.scss";
 import { Image } from "react-bootstrap";
 import Link from "next/link";
 import { List, PersonCircle, Search } from "react-bootstrap-icons";
-import { Offcanvas } from "react-bootstrap";
 import HeaderDrawer from "./header-drawer/header-drawer";
 
 const Header = () => {
@@ -27,7 +26,7 @@ const Header = () => {
     {
       id: "explore",
       href: "/",
-      text: "Explore",
+      text: "Explore Stores",
     },
     {
       id: "pricing",

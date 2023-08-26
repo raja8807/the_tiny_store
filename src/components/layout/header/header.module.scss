@@ -3,6 +3,7 @@
   width: 100%;
   top: 0;
   background-color: transparent;
+  z-index: 100;
   
   &.scrolled {
       border-bottom: 2px solid $color_pink;
